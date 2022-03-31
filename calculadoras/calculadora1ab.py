@@ -18,7 +18,11 @@ def multiplicar(x, y):
     return(x * y)
 
 def dividir(x, y):
-    return(x / y)
+    try:
+        return(x / y)
+
+    except:
+        print("Números fora da condição de existncia da divisão.")
 
 def calculadora():
     print("Selecione uma operação")
@@ -29,6 +33,10 @@ def calculadora():
         print("Programa finalizado.")
     
     elif selecao == "1":
+        '''
+        num1 => 1º valor numerico
+        num2 => 2º valor numerico
+        '''
         num1 = float(input("Digite um numero: "))
         num2 = float(input("Digite um numero: "))
         print(somar(num1, num2))

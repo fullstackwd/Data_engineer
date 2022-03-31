@@ -5,33 +5,38 @@
 #   Mathematician, MSc #
 #======================#
 
-# Import packages
+'''
+Verificação e revisão fonte: https://github.com/kostasthanos/Tkinter-Calculator/blob/master/Tkinter_Calculator.py
+Visual Soulcode
+'''
+
+# importação de pacotes
 from tkinter import *
 import math
-# import numpy as np
+# import numpy as np  # retriar o comentério se não estiver o numpy instalado.
 '''
-Functions
+Funções
 '''
-# Function to add in the entry of text display
+# Função para adicionar na entrada de exibição de texto
 def button_click(char):
     global calc_operator
     calc_operator += str(char)
     text_input.set(calc_operator)
 
-# Function to clear the whole entry of text display
+# Função para limpar toda a entrada de exibição de texto
 def button_clear_all():
     global calc_operator
     calc_operator = ""
     text_input.set("")
 
-# Function to delete one by one from the last in the entry of text display
+# Função para deletar um por um do último na entrada do display de texto
 def button_delete():
     global calc_operator
     text = calc_operator[:-1]
     calc_operator = text
     text_input.set(text)
 
-# Function to calculate the factorial of a number
+# Função para calcular o fatorial de um número
 def factorial(n):
     if n==0 or n==1:
         return 1
@@ -44,7 +49,7 @@ def fact_func():
     calc_operator = result
     text_input.set(result)
 
-# Function to calculate trigonometric numbers of an angle
+# Função para calcular números trigonométricos de um ângulo
 def trig_sin():
     global calc_operator
     result = str(math.sin(math.radians(int(calc_operator))))
@@ -69,7 +74,7 @@ def trig_cot():
     calc_operator = result
     text_input.set(result)
 
-# Function to find the square root of a number
+# Função para encontrar a raiz quadrada de um número
 def square_root():
     global calc_operator
     if int(calc_operator)>=0:
@@ -79,7 +84,7 @@ def square_root():
         temp = "ERROR"
     text_input.set(temp)
 
-# Function to find the third root of a number
+# Função para encontrar a raiz cubica de um número
 def third_root():
     global calc_operator
     if int(calc_operator)>=0:
@@ -89,7 +94,7 @@ def third_root():
         temp = "ERROR"
     text_input.set(temp)
 
-# Function to change the sign of number
+# Função para mudar o sinal do número
 def sign_change():
     global calc_operator
     if calc_operator[0]=='-':
@@ -106,7 +111,7 @@ def percent():
     calc_operator = temp
     text_input.set(temp)
 
-# Funtion to find the result of an operation
+# Função para encontrar o resultado de uma operação => igual
 def button_equal():
     global calc_operator
     temp_op = str(eval(calc_operator))
@@ -114,7 +119,7 @@ def button_equal():
     calc_operator = temp_op
 
 '''
-Variables
+Variáveis
 '''
 sin, cos, tan = math.sin, math.cos, math.tan
 log, ln = math.log10, math.log
@@ -123,107 +128,107 @@ p = math.pi
 E = '*10**'
 
 tk_calc = Tk()
-tk_calc.configure(bg="#293C4A", bd=10)
-tk_calc.title("Scientific Calculator")
+tk_calc.configure(bg="#f5fffe", bd=10)
+tk_calc.title("Calculadora Científica")
 
 calc_operator = ""
 text_input = StringVar()
 
 text_display = Entry(tk_calc, font=('sans-serif', 20, 'bold'), textvariable=text_input,
-                     bd=5, insertwidth = 5, bg='#BBB', justify='right').grid(columnspan=5, padx = 10, pady = 15)
+                     bd=5, insertwidth = 5, bg='#0e59e6', justify='right').grid(columnspan=5, padx = 10, pady = 15)
 
-button_params = {'bd':5, 'fg':'#BBB', 'bg':'#3C3636', 'font':('sans-serif', 20, 'bold')}
-button_params_main = {'bd':5, 'fg':'#000', 'bg':'#BBB', 'font':('sans-serif', 20, 'bold')}
+button_params = {'bd':5, 'fg':'#0e59e6', 'bg':'#f2e516', 'font':('sans-serif', 20, 'bold')}
+button_params_main = {'bd':5, 'fg':'#f2e516', 'bg':'#0e59e6', 'font':('sans-serif', 20, 'bold')}
 
 '''
-Buttons
+Botões
 '''
-#--1st row--
-# Absolute value of a number
+#--1ª linha--
+# Valor absoluto de um número
 abs_value = Button(tk_calc, button_params, text='abs',
                    command=lambda:button_click('abs(')).grid(row=1, column=0, sticky="nsew")
-# Remainder of a division
+# Restante de uma divisão
 modulo = Button(tk_calc, button_params, text='mod',
                 command=lambda:button_click('%')).grid(row=1, column=1, sticky="nsew")
-# Integer division quotient
+# Quociente de divisão inteiro
 int_div = Button(tk_calc, button_params, text='div',
                  command=lambda:button_click('//')).grid(row=1, column=2, sticky="nsew")
-# Factorial of a number
+# Fatorial de um número
 factorial_button = Button(tk_calc, button_params, text='x!',
                    command=fact_func).grid(row=1, column=3, sticky="nsew")
-# Euler's number e
+# número de Euler e
 eulers_num = Button(tk_calc, button_params, text='e',
                     command=lambda:button_click(str(math.exp(1)))).grid(row=1, column=4, sticky="nsew")
 
-#--2nd row--
-# Sine of an angle in degrees
+#---2ª linha--
+# Seno de um ângulo em graus
 sine = Button(tk_calc, button_params, text='sin',
              command=trig_sin).grid(row=2, column=0, sticky="nsew")
-# Cosine of an angle in degrees
+# Cosseno de um ângulo em graus
 cosine = Button(tk_calc, button_params, text='cos',
              command=trig_cos).grid(row=2, column=1, sticky="nsew")
-# Tangent of an angle in degrees
+# Tangente de um ângulo em graus
 tangent = Button(tk_calc, button_params, text='tan',
              command=trig_tan).grid(row=2, column=2, sticky="nsew")
-# Cotangent of an angle in degrees
+# Cotangente de um ângulo em graus
 cotangent = Button(tk_calc, button_params, text='cot',
              command=trig_cot).grid(row=2, column=3, sticky="nsew")
-# Pi(3.14...) number 
+# Número Pi(3,14...) 
 pi_num = Button(tk_calc, button_params, text='π',
                 command=lambda:button_click(str(math.pi))).grid(row=2, column=4, sticky="nsew")
 
-#--3rd row--
-# Power of 2
+#--3ª linha--
+# Potência de 2
 second_power = Button(tk_calc, button_params, text='x\u00B2',
              command=lambda:button_click('**2')).grid(row=3, column=0, sticky="nsew")
-# Power of 3
+# Potência de 3
 third_power = Button(tk_calc, button_params, text='x\u00B3',
              command=lambda:button_click('**3')).grid(row=3, column=1, sticky="nsew")
-# Power of n
+# Potência de n
 nth_power = Button(tk_calc, button_params, text='x^n',
              command=lambda:button_click('**')).grid(row=3, column=2, sticky="nsew")
-# Inverse number
+# Número inverso
 inv_power = Button(tk_calc, button_params, text='x\u207b\xb9',
              command=lambda:button_click('**(-1)')).grid(row=3, column=3, sticky="nsew")
-# Powers of 10
+# Potências de 10
 tens_powers = Button(tk_calc, button_params, text='10^x', font=('sans-serif', 15, 'bold'),
                      command=lambda:button_click('10**')).grid(row=3, column=4, sticky="nsew")
 
-#--4th row--
-# Square root of a number
+#--4ª linha--
+# Raiz quadrada de um número
 square_root = Button(tk_calc, button_params, text='\u00B2\u221A',
                      command=square_root).grid(row=4, column=0, sticky="nsew")
-# Third root of a number
+# Terceira raiz de um número
 third_root = Button(tk_calc, button_params, text='\u00B3\u221A',
                     command=third_root).grid(row=4, column=1, sticky="nsew")
-# nth root of a number
+# n-ésima raiz de um número
 nth_root = Button(tk_calc, button_params, text='\u221A',
                   command=lambda:button_click('**(1/')).grid(row=4, column=2, sticky="nsew")
-# Logarithm of a number with base 10
+# Logaritmo de um número com base 10
 log_base10 = Button(tk_calc, button_params, text='log\u2081\u2080', font=('sans-serif', 16, 'bold'),
                    command=lambda:button_click('log(')).grid(row=4, column=3, sticky="nsew")
-# Logarithm of a number with base e (ln)
+# Logaritmo de um número com base e (ln)
 log_basee = Button(tk_calc, button_params, text='ln',
                    command=lambda:button_click('ln(')).grid(row=4, column=4, sticky="nsew")
 
-#--5th row--
-# Add a left parentheses
+#--5ª linha--
+# Adicionar parêntese esquerdo
 left_par = Button(tk_calc, button_params, text='(',
                   command=lambda:button_click('(')).grid(row=5, column=0, sticky="nsew")
-# Add a right parentheses
+# Adicionar parênteses à direita
 right_par = Button(tk_calc, button_params, text=')',
                    command=lambda:button_click(')')).grid(row=5, column=1, sticky="nsew")   
-# Change the sign of a number
+# Alterar o sinal de um número
 signs = Button(tk_calc, button_params, text='\u00B1',
                command=sign_change).grid(row=5, column=2, sticky="nsew")
-# Transform number to percentage
+# Transformar número em porcentagem
 percentage = Button(tk_calc, button_params, text='%',
                command=percent).grid(row=5, column=3, sticky="nsew")
-# Calculate the function e^x
+# Calcule a função e^x
 ex = Button(tk_calc, button_params, text='e^x',
                command=lambda:button_click('e(')).grid(row=5, column=4, sticky="nsew")
 
-#--6th row--
+#--6ª linha--
 button_7 = Button(tk_calc, button_params_main, text='7',
                   command=lambda:button_click('7')).grid(row=6, column=0, sticky="nsew")
 button_8 = Button(tk_calc, button_params_main, text='8',
@@ -231,11 +236,11 @@ button_8 = Button(tk_calc, button_params_main, text='8',
 button_9 = Button(tk_calc, button_params_main, text='9',
                   command=lambda:button_click('9')).grid(row=6, column=2, sticky="nsew")
 delete_one = Button(tk_calc, bd=5, fg='#000', font=('sans-serif', 20, 'bold'),
-              text='DEL', command=button_delete, bg='#db701f').grid(row=6, column=3, sticky="nsew")
+              text='DEL', command=button_delete, bg='#db1f1f').grid(row=6, column=3, sticky="nsew")
 delete_all = Button(tk_calc, bd=5, fg='#000', font=('sans-serif', 20, 'bold'),
-              text='AC', command=button_clear_all, bg='#db701f').grid(row=6, column=4, sticky="nsew")
+              text='AC', command=button_clear_all, bg='#bd2008').grid(row=6, column=4, sticky="nsew")
 
-#--7th row--
+#--7ª linha--
 button_4 = Button(tk_calc, button_params_main, text='4',
                   command=lambda:button_click('4')).grid(row=7, column=0, sticky="nsew")
 button_5 = Button(tk_calc, button_params_main, text='5',
@@ -247,7 +252,7 @@ mul = Button(tk_calc, button_params_main, text='*',
 div = Button(tk_calc, button_params_main, text='/',
              command=lambda:button_click('/')).grid(row=7, column=4, sticky="nsew")
 
-#--8th row--
+#--8ª linha--
 button_1 = Button(tk_calc, button_params_main, text='1',
                   command=lambda:button_click('1')).grid(row=8, column=0, sticky="nsew")
 button_2 = Button(tk_calc, button_params_main, text='2',
@@ -259,7 +264,7 @@ add = Button(tk_calc, button_params_main, text='+',
 sub = Button(tk_calc, button_params_main, text='-',
              command=lambda:button_click('-')).grid(row=8, column=4, sticky="nsew")
 
-#--9th row--
+#--9ª linha--
 button_0 = Button(tk_calc, button_params_main, text='0',
                   command=lambda:button_click('0')).grid(row=9, column=0, sticky="nsew")
 point = Button(tk_calc, button_params_main, text='.',

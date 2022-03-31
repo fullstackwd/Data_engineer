@@ -1,10 +1,20 @@
+"""
+Disponivel em:
+https://www.geeksforgeeks.org/scientific-gui-calculator-using-tkinter-in-python/    
+
+Modificação de teclado em seguimento helicoidal (Inovar design)
+Modificação de cores de fundo de botões, caracteres, display, menus e titulos
+Aprveitamento das funções matemáticas e pacotes.
+
+"""
+
 from tkinter import *
 import math
 import tkinter.messagebox
 
 root = Tk()
-root.title("Scientific Calculator")
-root.configure(background='white')
+root.title("SoulCode - Calculadora Científica")
+root.configure(background='gold2')
 root.resizable(width=False, height=False)
 root.geometry("480x568+450+90")
 calc = Frame(root)
@@ -191,18 +201,18 @@ class Calc():
 added_value = Calc()
 
 txtDisplay = Entry(calc, font=('Helvetica', 20, 'bold'),
-                   bg='black', fg='white',
+                   bg='blue', fg='gold2',
                    bd=30, width=28, justify=RIGHT)
 txtDisplay.grid(row=0, column=0, columnspan=4, pady=1)
-txtDisplay.insert(0, "0")
+txtDisplay.insert(0, "SoulCode ")
 
-numberpad = "789456123"
+numberpad = "345296187" # modificação do teclado em espiral
 i = 0
 btn = []
 for j in range(2, 5):
     for k in range(3):
         btn.append(Button(calc, width=6, height=2,
-                          bg='black', fg='white',
+                          bg='blue', fg='gold2',
                           font=('Helvetica', 20, 'bold'),
                           bd=4, text=numberpad[i]))
         btn[i].grid(row=j, column=k, pady=1)
@@ -210,204 +220,204 @@ for j in range(2, 5):
         i += 1
 
 btnClear = Button(calc, text=chr(67), width=6,
-                  height=2, bg='powder blue',
+                  height=2, bg='red',
                   font=('Helvetica', 20, 'bold')
                   , bd=4, command=added_value.Clear_Entry
                   ).grid(row=1, column=0, pady=1)
 
 btnAllClear = Button(calc, text=chr(67) + chr(69),
                      width=6, height=2,
-                     bg='powder blue',
+                     bg='orangered4',
                      font=('Helvetica', 20, 'bold'),
                      bd=4,
                      command=added_value.All_Clear_Entry
                      ).grid(row=1, column=1, pady=1)
 
 btnsq = Button(calc, text="\u221A", width=6, height=2,
-               bg='powder blue', font=('Helvetica',
+               bg='gold2', font=('Helvetica',
                                        20, 'bold'),
                bd=4, command=added_value.squared
                ).grid(row=1, column=2, pady=1)
 
 btnAdd = Button(calc, text="+", width=6, height=2,
-                bg='powder blue',
+                bg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=lambda: added_value.operation("add")
                 ).grid(row=1, column=3, pady=1)
 
 btnSub = Button(calc, text="-", width=6,
-                height=2, bg='powder blue',
+                height=2, bg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=lambda: added_value.operation("sub")
                 ).grid(row=2, column=3, pady=1)
 
 btnMul = Button(calc, text="x", width=6,
-                height=2, bg='powder blue',
+                height=2, bg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=lambda: added_value.operation("multi")
                 ).grid(row=3, column=3, pady=1)
 
 btnDiv = Button(calc, text="/", width=6,
-                height=2, bg='powder blue',
+                height=2, bg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=lambda: added_value.operation("divide")
                 ).grid(row=4, column=3, pady=1)
 
 btnZero = Button(calc, text="0", width=6,
-                 height=2, bg='black', fg='white',
+                 height=2, bg='blue', fg='gold2',
                  font=('Helvetica', 20, 'bold'),
                  bd=4, command=lambda: added_value.numberEnter(0)
                  ).grid(row=5, column=0, pady=1)
 
 btnDot = Button(calc, text=".", width=6,
-                height=2, bg='powder blue',
+                height=2, bg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=lambda: added_value.numberEnter(".")
                 ).grid(row=5, column=1, pady=1)
 btnPM = Button(calc, text=chr(177), width=6,
-               height=2, bg='powder blue', font=('Helvetica', 20, 'bold'),
+               height=2, bg='gold2', font=('Helvetica', 20, 'bold'),
                bd=4, command=added_value.mathPM
                ).grid(row=5, column=2, pady=1)
 
 btnEquals = Button(calc, text="=", width=6,
-                   height=2, bg='powder blue',
+                   height=2, bg='green',
                    font=('Helvetica', 20, 'bold'),
                    bd=4, command=added_value.sum_of_total
                    ).grid(row=5, column=3, pady=1)
 # ROW 1 :
 btnPi = Button(calc, text="pi", width=6,
-               height=2, bg='black', fg='white',
+               height=2, bg='blue', fg='gold2',
                font=('Helvetica', 20, 'bold'),
                bd=4, command=added_value.pi
                ).grid(row=1, column=4, pady=1)
 
 btnCos = Button(calc, text="Cos", width=6,
-                height=2, bg='black', fg='white',
+                height=2, bg='blue', fg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=added_value.cos
                 ).grid(row=1, column=5, pady=1)
 
 btntan = Button(calc, text="tan", width=6,
-                height=2, bg='black', fg='white',
+                height=2, bg='blue', fg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=added_value.tan
                 ).grid(row=1, column=6, pady=1)
 
 btnsin = Button(calc, text="sin", width=6,
-                height=2, bg='black', fg='white',
+                height=2, bg='blue', fg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=added_value.sin
                 ).grid(row=1, column=7, pady=1)
 
 # ROW 2 :
 btn2Pi = Button(calc, text="2pi", width=6,
-                height=2, bg='black', fg='white',
+                height=2, bg='blue', fg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=added_value.tau
                 ).grid(row=2, column=4, pady=1)
 
 btnCosh = Button(calc, text="Cosh", width=6,
-                 height=2, bg='black', fg='white',
+                 height=2, bg='blue', fg='gold2',
                  font=('Helvetica', 20, 'bold'),
                  bd=4, command=added_value.cosh
                  ).grid(row=2, column=5, pady=1)
 
 btntanh = Button(calc, text="tanh", width=6,
-                 height=2, bg='black', fg='white',
+                 height=2, bg='blue', fg='gold2',
                  font=('Helvetica', 20, 'bold'),
                  bd=4, command=added_value.tanh
                  ).grid(row=2, column=6, pady=1)
 
 btnsinh = Button(calc, text="sinh", width=6,
-                 height=2, bg='black', fg='white',
+                 height=2, bg='blue', fg='gold2',
                  font=('Helvetica', 20, 'bold'),
                  bd=4, command=added_value.sinh
                  ).grid(row=2, column=7, pady=1)
 
 # ROW 3 :
 btnlog = Button(calc, text="log", width=6,
-                height=2, bg='black', fg='white',
+                height=2, bg='blue', fg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=added_value.log
                 ).grid(row=3, column=4, pady=1)
 
 btnExp = Button(calc, text="exp", width=6, height=2,
-                bg='black', fg='white',
+                bg='blue', fg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=added_value.exp
                 ).grid(row=3, column=5, pady=1)
 
 btnMod = Button(calc, text="Mod", width=6,
-                height=2, bg='black', fg='white',
+                height=2, bg='blue', fg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=lambda: added_value.operation("mod")
                 ).grid(row=3, column=6, pady=1)
 
 btnE = Button(calc, text="e", width=6,
-              height=2, bg='black', fg='white',
+              height=2, bg='blue', fg='gold2',
               font=('Helvetica', 20, 'bold'),
               bd=4, command=added_value.e
               ).grid(row=3, column=7, pady=1)
 
 # ROW 4 :
 btnlog10 = Button(calc, text="log10", width=6,
-                  height=2, bg='black', fg='white',
+                  height=2, bg='blue', fg='gold2',
                   font=('Helvetica', 20, 'bold'),
                   bd=4, command=added_value.log10
                   ).grid(row=4, column=4, pady=1)
 
 btncos = Button(calc, text="log1p", width=6,
-                height=2, bg='black', fg='white',
+                height=2, bg='blue', fg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=added_value.log1p
                 ).grid(row=4, column=5, pady=1)
 
 btnexpm1 = Button(calc, text="expm1", width=6,
-                  height=2, bg='black', fg='white',
+                  height=2, bg='blue', fg='gold2',
                   font=('Helvetica', 20, 'bold'),
                   bd=4, command=added_value.expm1
                   ).grid(row=4, column=6, pady=1)
 
 btngamma = Button(calc, text="gamma", width=6,
-                  height=2, bg='black', fg='white',
+                  height=2, bg='blue', fg='gold2',
                   font=('Helvetica', 20, 'bold'),
                   bd=4, command=added_value.lgamma
                   ).grid(row=4, column=7, pady=1)
 # ROW 5 :
 btnlog2 = Button(calc, text="log2", width=6,
-                 height=2, bg='black', fg='white',
+                 height=2, bg='blue', fg='gold2',
                  font=('Helvetica', 20, 'bold'),
                  bd=4, command=added_value.log2
                  ).grid(row=5, column=4, pady=1)
 
 btndeg = Button(calc, text="deg", width=6,
-                height=2, bg='black', fg='white',
+                height=2, bg='blue', fg='gold2',
                 font=('Helvetica', 20, 'bold'),
                 bd=4, command=added_value.degrees
                 ).grid(row=5, column=5, pady=1)
 
 btnacosh = Button(calc, text="acosh", width=6,
-                  height=2, bg='black', fg='white',
+                  height=2, bg='blue', fg='gold2',
                   font=('Helvetica', 20, 'bold'),
                   bd=4, command=added_value.acosh
                   ).grid(row=5, column=6, pady=1)
 
 btnasinh = Button(calc, text="asinh", width=6,
-                  height=2, bg='black', fg='white',
+                  height=2, bg='blue', fg='gold2',
                   font=('Helvetica', 20, 'bold'),
                   bd=4, command=added_value.asinh
                   ).grid(row=5, column=7, pady=1)
 
-lblDisplay = Label(calc, text="Scientific Calculator",
+lblDisplay = Label(calc, text="Calculadora Científica",
                    font=('Helvetica', 30, 'bold'),
-                   bg='black', fg='white', justify=CENTER)
+                   bg='gold2', fg='blue2', justify=CENTER)
 
 lblDisplay.grid(row=0, column=4, columnspan=4)
 
 
 def iExit():
-    iExit = tkinter.messagebox.askyesno("Scientific Calculator",
-                                        "Do you want to exit ?")
+    iExit = tkinter.messagebox.askyesno("Calculadora Científica",
+                                        "Você deseja finalizar a aplicação?")
     if iExit > 0:
         root.destroy()
         return
@@ -427,19 +437,19 @@ menubar = Menu(calc)
 
 # ManuBar 1 :
 filemenu = Menu(menubar, tearoff=0)
-menubar.add_cascade(label='File', menu=filemenu)
-filemenu.add_command(label="Standard", command=Standard)
-filemenu.add_command(label="Scientific", command=Scientific)
+menubar.add_cascade(label='Arquivo', menu=filemenu)
+filemenu.add_command(label="Simples", command=Standard)
+filemenu.add_command(label="Científica", command=Scientific)
 filemenu.add_separator()
-filemenu.add_command(label="Exit", command=iExit)
+filemenu.add_command(label="Sair", command=iExit)
 
 # ManuBar 2 :
 editmenu = Menu(menubar, tearoff=0)
-menubar.add_cascade(label='Edit', menu=editmenu)
-editmenu.add_command(label="Cut")
-editmenu.add_command(label="Copy")
+menubar.add_cascade(label='Editar', menu=editmenu)
+editmenu.add_command(label="Cortar")
+editmenu.add_command(label="Copiar")
 editmenu.add_separator()
-editmenu.add_command(label="Paste")
+editmenu.add_command(label="Colar")
 
 root.config(menu=menubar)
 

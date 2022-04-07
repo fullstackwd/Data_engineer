@@ -20,7 +20,6 @@ def multiplicar(x, y):
 def dividir(x, y):
     try:
         return(x / y)
-
     except:
         print("Números fora da condição de existncia da divisão.")
 

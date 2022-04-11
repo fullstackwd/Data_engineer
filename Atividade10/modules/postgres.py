@@ -35,3 +35,8 @@ class Conector_postgres:
         for dado in dados:
             lista_dados.append(dado)
         return lista_dados
+    
+    def create(self, query):
+        conn, cursor = self.conectar()
+        cursor.execute(query)
+        self.desconectar(conn, cursor)

@@ -1,0 +1,52 @@
+		-- ----------------------------------------------------------------------------------			
+idvendas	idproduto	insert into produto (idfornecedor	 descricao	 preco	venda
+1	1	 (1	 'Pyrilamine Maleate and Phenylephrine Hydrochloride'	 '1.81'	1
+2	2	 (16	 'Lisinopril'	 '6.03'	2
+3	3	 (1000	 'FENTANYL'	 '3.99'	3
+4	4	 (999	 'Isopropyl Alcohol'	 '4.96'	4
+5	5	 (998	 'OXYGEN'	 '2.18'	5
+6	6	 (997	 'sodium chloride'	 '8.29'	6
+7	7	 (996	 'Quetiapine fumarate'	 '6.86'	7
+8	8	 (995	 'carvedilol'	 '5.63'	 8)
+9	10	 (993	 'Alternaria alternata'	 '0.55'	 10)
+10	12	 (991	 'witch hazel'	 '3.45'	 12)
+11	13	 (990	 'CETYLPYRIDINIUM CHLORIDE'	 '1.49'	 13)
+12	14	 (989	 'Propranolol Hydrochloride'	 '5.37'	 14)
+13	15	 (988	 'POTASSIUM CHLORIDE'	 '3.07'	 15)
+14	16	 (987	 'Risperidone'	 '3.04'	 16)
+15	17	 (986	 'Treatment Set TS333635'	 '8.06'	 17)
+16	18	 (985	 'Common Sagebrush'	 '2.03'	 18)
+17	19	 (984	 'OXYGEN'	 '8.56'	 19)
+18	20	 (983	 'ethyl alcohol'	 '9.81'	 20)
+19	22	 (981	 'ydrocodone bitartrate and acetaminophen'	 '9.12'	 22)
+20	23	 (980	 'Albuterol Sulfate'	 '9.42'	 23)
+21	25	 (978	 'Phenylephrine HCl'	 '8.87'	 25)
+22	26	 (977	 'bromocriptine mesylate'	 '3.24'	 26)
+23	27	 (976	 'ERYTHROMYCIN STEARATE'	 '5.71'	 27)
+24	28	 (975	 'BENZALKONIUM CHLORIDE'	 '1.31'	 28)
+25	29	 (974	 'clobetasol propionate'	 '3.33'	 29)
+26	30	 (973	 'DICYCLOMINE'	 '1.21'	 30)
+27	31	 (972	 'Antipyrine and Benzocaine'	 '4.81'	 31)
+28	32	 (971	 'Ranitidine Hydrochloride'	 '6.10'	 32)
+29	33	 (970	 'alcohol'	 '1.06'	 33)
+30	34	 (969	 'White Alder'	 '6.70'	 34)
+31	35	 (968	 'bupropion hydrochloride'	 '7.96'	 35)
+32	36	 (967	 'Nitrofurantion Macrocrystals'	 '4.94'	 36)
+33	37	 (966	 'Doxycycline Hyclate'	 '2.52'	 37)
+34	38	 (965	 'DIMETHICONE'	 '9.51'	 38)
+35	39	 (964	 'Carbidopa Tablets'	 '5.69'	 39)
+36	40	 (963	 'Warfarin Sodium'	 '4.15'	 40)
+37	42	 (961	 'Terazosin Hydrochloride'	 '8.03'	 42)
+38	43	 (960	 'mesalamine'	 '6.70'	 43)
+39	44	 (959	 'Cetirizine HCl'	 '8.37'	 44)
+40	45	 (958	 'ISOPROPYL ALCOHOL'	 '3.60'	 45)
+41	46	 (957	 'amiodarone hydrochloride'	 '8.79'	 46)
+42	48	 (955	 'Oxygen'	 '7.76'	 48)
+43	49	 (954	 'albuterol sulfate'	 '5.39'	 49)
+44	50	 (953	 'Diphenhydramine Hydrochloride'	 '8.64'	 50)
+45	51	 (952	 'Bayberry'	 '9.82'	 51)
+46	52	 (951	 'Methocarbamol'	 '0.17'	 52)
+47	53	 (950	 'GENTAMICIN SULFATE'	 '7.47'	 53)
+48	54	 (949	 'fenofibrate'	 '4.08'	 54)
+49	55	 (948	 'Sunscreen'	 '1.47'	 55)
+50	56	 (947	 'Psyllium Husks'	 '9.79'	 56)

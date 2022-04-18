@@ -50,7 +50,7 @@ INSERT INTO professor VALUES (45675,'Abgair Simon Ferreira','Banco de Dados'),
 
 CREATE TABLE disciplinas (
 	numdisp int NOT NULL,
-	nome varchar(20),
+	nome varchar(40),
 	quantcreditos int,
 
 	PRIMARY KEY (numdisp)
@@ -64,8 +64,9 @@ INSERT INTO disciplinas VALUES(1,'Banco de Dados',30),
 							  (4,'Calculo Numerico',30),
 							  (5,'Psicologia Infantil',25),
 							  (6,'Direito Tributario',33),
-							  (7,'Engenharia Software',27);
+							  (7,'Engenharia de Software',27);
 
+select * from disciplinas;
 
 CREATE TABLE aula (
 	aluno_fk int NOT NULL,
@@ -113,4 +114,4 @@ CREATE TABLE disciplinacurso (
 
 INSERT INTO disciplinacurso VALUES (4,2142),(7,2142),(1,2143),(2,2143),(4,2143),(7,2143),(3,2144),(6,2144),(5,2145);
 
-
+select * from disciplinacurso;

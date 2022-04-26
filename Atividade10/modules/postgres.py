@@ -2,12 +2,14 @@ import psycopg2
 
 class Conector_postgres:
     
-    def __init__ (self, host, db="acougueDB", user="postgres", password="postgres"):
+    def __init__ (self, host, db, user, password, port):
         try:
             self.host = host
             self.db = db
             self.user = user
             self.password = password
+            self.port = port
+            
         except Exception as e:
             print(str(e))
     
@@ -36,7 +38,25 @@ class Conector_postgres:
             lista_dados.append(dado)
         return lista_dados
     
-    def create(self, query):
+    def deletar(self, query):
         conn, cursor = self.conectar()
         cursor.execute(query)
         self.desconectar(conn, cursor)
+    
+    def update(self, query):
+        conn, cursor = self.conectar()
+        cursor.execute(query)
+        self.desconectar(conn, cursor)
+    
+    def update(self, query):
+        conn, cursor = self.conectar()
+        cursor.execute(query)
+        self.desconectar(conn, cursor)
+    
+    def criar(self,query):
+        conn, cursor = self.conectar()
+        cursor.execute(query)
+        self.desconectar(conn, cursor)
+    
+    def get_user(self):
+        return self.user
